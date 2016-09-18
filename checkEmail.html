@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+请输电子邮箱：<input type="text" id="yxkeleyi" />
+<input type="button" id="yxcheck" value="检查电子邮箱" onclick="checkEmail(yxkeleyi.value)" />
+
+<script>
+    function
+    checkEmail(str) {
+        var
+                re = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/
+        if (re.test(str)) {
+            alert("正确");
+        } else {
+            alert("错误");
+        }
+    }
+
+</script>
+</body>
+</html>

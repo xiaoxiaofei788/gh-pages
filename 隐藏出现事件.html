@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src='js/jquery-1.9.1.min.js'></script>
+    <style>
+        .hide{
+            display: none;
+        }
+        .show{
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('#btn').on('click', function () {
+                $('#box').toggle();
+            });
+//            var btn = document.getElementById("btn");
+//            var box = document.getElementById("box");
+//            btn.onclick = function () {
+//                if (box.className == 'hide') {
+//                    box.className = 'show';
+//                } else {
+//                    box.className = 'hide';
+//                }
+//            }
+        });
+//        var btn = document.getElementById("btn");
+//        var box = document.getElementById("box");
+//        btn.onclick = function () {
+//            if (box.className == 'hide') {
+//                box.className = 'show';
+//            } else {
+//                box.className = 'hide';
+//            }
+//        }
+    </script>
+</head>
+<body>
+<div class="box1" id="btn"></div>
+<div class="box2" id="box"></div>
+
+</body>
+</html>

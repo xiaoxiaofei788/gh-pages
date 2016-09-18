@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>社区-开发者</title>
+    <script src='js/jquery-1.9.1.min.js'></script>
+    <script src='js/main.js'></script>
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+</head>
+<body>
+<div id="keyformcontainer" class="row">
+    <div id="apikeyform" class="row clearfix">
+        <div class="firstKey">
+            <h4>申请印象笔记 API Key</h4>
+            <br>
+        </div>
+        <div class="key_l clearfix">
+            <form action="php/form.php" method="post">
+                <div class="addinfor">
+                    <label>印象笔记用户名</label>
+                    <input type="text" name="username" id="yxkeleyi1"/>
+                </div>
+                <div class="addinfor">
+                    <label>姓名</label>
+                    <input type="text" name="contactName"/>
+                </div>
+                <div class="addinfor">
+                    <label>电子邮箱</label>
+                    <input type="text" name="contactEmail" id="yxkeleyi"/>
+                </div>
+                <div class="addinfor">
+                <label>公司名称</label>
+                <input type="text" name="organization" id="yxkeleyi2"/>
+
+            </div>
+
+                <div class="addinfor">
+                    <label>应用名称</label>
+                    <input type="text" name="appName" id="yxkeleyi3"/>
+                </div>
+                <div class="addinfor">
+                    <label>描述应用</label>
+                    <textarea id="key-description" name="details"  id="yxkeleyi4"></textarea>
+                </div>
+                <div class="addinfor">
+                    <label>验证码</label>
+                    <img src="php/captcha.php?r=<?php echo rand();?>" alt="change" id="captcha_img" >
+                    <input type="text" name="authcode" placeholder="请输入验证码" id="yxkeleyi5">
+                    <br/>
+                    <br/>
+                    <br/>
+                    <a class="newCaptcha" href="#" onclick="document.getElementById('captcha_img').src='php/captcha.php?r='+Math.random() ">看不清？换一张</a>
+                </div>
+            </form>
+        </div>
+        <div class="key_r">
+            <fieldset class="apiAccessFS">
+                <span class="label radius">注意：</span> 查看 <a href="/doc/articles/permissions.php" target="_blank">API 权限文档 »</a><br><br>
+                <legend>API Permissions</legend> <label>选择你的应用需要的权限</label>
+                <br/>
+                <label><input name="type" type="radio" value="creator" checked=""> <strong>基本权限</strong></label>
+                <br/>
+                <label><input name="type" type="radio" value="oauth"> <strong>完全权限</strong></label>
+                <br>
+            </fieldset>
+            <label for="listsub"><input name="chimplist" type="checkbox" id="listsub">订阅印象笔记开发者邮件列表</label>
+            <br/>
+            <label for="licagree"><input name="agreement" type="checkbox" id="licagree">我确认我已经阅读并同意<a target="_blank" href="/doc/reference/api_license.php" class="agreK">印象笔记 API 授权协议中的所有条<br/>款</a>.</label>
+            <br/>
+            <input type="submit" id="apisubmit" value="申请 Key" class="rounded button" onclick="checkEmail(yxkeleyi.value)" disabled='disabled'>
+            <a href="#" id="quxiao">取消</a>
+        </div>
+    </div>
+</div>
+<div class="sumAll">
+    <div class="top-bar" id="top_bar">
+        <div class="top_l">
+            <h1>
+                <a href="javascript:;">
+                    <img src="images/evernote_32.png" alt="Evernote Logo" class='mads'/>
+                    印象笔记
+                    <span class='developers'>开发者</span>
+                </a>
+            </h1>
+        </div>
+        <div class="top_m">
+            <ul>
+                <li class="divider"></li>
+                <li class="search">
+                    <form action="/search" method="get">
+                        <input  type="search" name="q" placeholder="搜索" id="searchq"/>
+                    </form>
+                </li>
+                <li class="divider"></li>
+                <li class="has-dropdown">
+                    <a href="/doc/" class="has-dropdowna">
+                        文档
+                    </a>
+                    <ul class="drop-down w1">
+                        <li>
+                            <label>印象笔记 API</label>
+                        </li>
+                        <li><a href="javascript:;">快速入门</a></li>
+                        <li><a href="javascript:;">技术专题</a></li>
+                        <li><a href="javascript:;">API 参考</a></li>
+                        <li><a href="javascript:;">术语表</a></li>
+                        <li class="divider"></li>
+                        <li><label>百宝箱</label></li>
+                        <li><a href="javascript:;">提交你的应用</a></li>
+                        <li><a href="javascript:;">提交你的应用</a></li>
+                    </ul>
+                </li>
+                <li class="divider"></li>
+                <li class="has-dropdown">
+                    <a href="javascript:;" class="has-dropdowna">资源</a>
+                    <ul class="drop-down w2">
+                        <li><label>社区</label></li>
+                        <li><a href="javascript:;">Hackathons & Events</a></li>
+                        <li><a href="javascript:;">为什么用印象笔记?</a></li>
+                        <li><a href="javascript:;">演讲 & 视频</a></li>
+                        <li><a href="javascript:;">开发者支持</a></li>
+                        <li class="divider"></li>
+                        <li><label>联系我们</label></li>
+                        <li><a href="javascript:;">dev@yinxiang.com</a></li>
+                        <li><a href="javascript:;">技术博客</a></li>
+                        <li><a href="javascript:;">印象笔记 Stack Overflow</a></li>
+                        <li><a href="javascript:;">印象笔记 Github</a></li>
+                        <li><a href="javascript:;">开发者论坛</a></li>
+                        <li><label>开发者工具</label></li>
+                        <li><a href="javascript:;">激活API Key</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="top_r">
+            <ul>
+                <li class="has-button has-button2" id="has-button2">
+                    <a href="javascript:;" class="tiny button radius">
+                         <i class="iconfont">&#xe6cb;</i>
+                        获取API Key
+                    </a>
+                </li>
+                <li class="divider"></li>
+                <li><a href="//www.yinxiang.com">yinxiang.com</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="main">
+        <div id="mast">
+            <h1 class="pitch">让你的应用有记忆</h1>
+            <h4 class="subheader ">加入印象笔记开发者社区</h4>
+            <br/>
+            <br/>
+
+            <div class="has-button btnA has-button2">
+                <a href="javascript:;" class="tiny button radius">
+                    <i class="iconfont">&#xe6cb;</i>
+                    开始使用API »
+                </a>
+            </div>
+            <br/><br/><br/><br/><br/><br/>
+        </div>
+        <div class="content1 clearfix">
+            <div class="content_l">
+                <a href="javascript:;">
+                <span class="random">
+                   <i class="iconfont">&#xe6a3;</i>
+                </span>
+
+                </a>
+                <h4>文档</h4>
+
+                <p>
+                    讲述如何使用该平台和API的技术文档
+                    <br/>
+                    <a href="/doc/">阅读文档</a>
+                </p>
+            </div>
+            <div class="content_m">
+                <a href="javascript:;">
+                <span class="random">
+                     <i class="iconfont">&#xe600;</i>
+                </span>
+
+                </a>
+                <h4>为什么要接入印象笔记?</h4>
+
+                <p>
+                    健壮、可用性高的服务，帮你存储记忆
+                    <br/>
+                    <a href="/doc/">了解更多</a>
+                </p>
+            </div>
+            <div class="content_r">
+                <a href="javascript:;">
+                <span class="random">
+                    <i class="iconfont">&#xe62e;</i>
+                </span>
+
+                </a>
+                <h4>开发者支持</h4>
+
+                <p>
+                    社区论坛 & 使用印象笔记 API 创建应用
+                    <br/>所需的资源
+                    <a href="/doc/">获取帮助</a>
+                </p>
+            </div>
+        </div>
+        <div class="content2 w">
+            <div class="article">
+                <div class="updata">
+                    <h5>最新动态</h5>
+                    <span class="random">
+                   <i class="iconfont">&#xe6a3;</i>
+                </span>
+                    <a href="javascript:;">A unified job library for Android</a>
+                    <br/>
+                     <span class="random">
+                   <i class="iconfont">&#xe6a3;</i>
+                </span>
+                    <a href="javascript:;">Our Continuous Localization
+                        <br/>
+                        System, Serge, is now Open
+                        <br/>
+                        Source!</a>
+                    <br/>
+                     <span class="random">
+                   <i class="iconfont">&#xe6a3;</i>
+                </span>
+                    <a href="javascript:;">The Great Shard Migration, Part
+                        <br/>
+                        II</a>
+                    <br/>
+                     <span class="random">
+                   <i class="iconfont">&#xe6a3;</i>
+                </span>
+                    <a href="javascript:;">Wearable Tech: Build on the
+                        <br/>
+                        WOVE band!</a>
+                </div>
+                <div class="videos">
+                    <h5>印象笔记百宝箱</h5>
+                    <a href="javascript:;" id="trunk">
+                        <img src="images/trunk.png" alt="印象笔记百宝箱"/>
+                        <span class="line top"></span>
+                        <span class="line right"></span>
+                        <span class="line bottom"></span>
+                        <span class="line left"></span>
+
+                    </a>
+
+                    <p>为印象笔记百宝箱开发下一代应用 <a href="http://trunk.yinxiang.com">了解<br/>更多»</a></p>
+                </div>
+                <div class="hr">
+                    <h5>Meetups &amp; Hackathons</h5>
+
+                    <p>印象笔记在全世界举办聚会、开发者马<br/>拉松还有开发者活动。查看即将到来的<br/>活动，熟悉开发者社区 <a href="/events/" class="pill">查看活动</a>
+                    </p>
+                    <hr>
+                    <h5>招聘进行时</h5>
+
+                    <p>加入我们的团队，一起打造未来的印象<br/>笔记平台。我们正在壮大我们的队伍，<br/>我们需要你！<a href="http://yinxiang.com/careers">开放的职位</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<footer>
+    <dl>
+        <dt>产品</dt>
+        <dd>印象笔记</dd>
+        <dd>印象笔记·圈点</dd>
+        <dd>印象笔记·墨笔</dd>
+        <dd>印象笔记·剪藏</dd>
+        <dd>印象笔记·人脉</dd>
+        <dd>印象笔记·食记</dd>
+        <dd>印象笔记·悦读</dd>
+        <dd>印象笔记·宝盖</dd>
+        <dd>百宝箱</dd>
+    </dl>
+    <dl>
+        <dt>关于我们</dt>
+        <dd>公司远景</dd>
+        <dd>加入我们</dd>
+        <dd>联系我们</dd>
+        <dd>商标</dd>
+        <dd>服务条款</dd>
+        <dd>隐私条款</dd>
+    </dl>
+    <dl>
+        <dt>用户支持</dt>
+        <dd>用户支持首页</dd>
+        <dt>高级帐户</dt>
+        <dd>个人用户</dd>
+        <dd>企业版</dd>
+    </dl>
+    <dl>
+        <dt>社区</dt>
+        <dd>博客</dd>
+        <dd>新浪微博</dd>
+        <dd>微信</dd>
+        <dd>人人网</dd>
+        <dd>豆瓣</dd>
+        <dd>QQ空间</dd>
+        <dd>果壳</dd>
+        <dd>视频</dd>
+        <dd>开发者</dd>
+    </dl>
+    <div class="copyRight">
+        <div class="social_icons clearfix">
+            <a href="http://weibo.com/yinxiangbiji"><img src="images/sina_weibo_color_24x24.png" alt="新浪微博"></a>
+            <a href="http://e.weibo.com/2797465504/yBnlNoIKT"><img src="images/weixin_24x24.png" alt="微信"></a>
+            <a href="http://page.renren.com/601460076"><img src="images/renren_24x24.png" alt="人人网"></a>
+            <a href="http://www.douban.com/group/260719/"><img src="images/douban_24x24.png" alt="豆瓣小组"></a>
+        </div>
+        <p>版权所有 2012 Evernote Corporation.<br/>
+            保留一切权利<br/>
+            <a href="http://www.miibeian.gov.cn">京ICP证120424号</a><br/>
+            京公网安备11010802011736号</p>
+    </div>
+</footer>
+</body>
+</html>
